@@ -22,6 +22,8 @@ body {
 .logo {
   font-size: 28px;
   font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  margin-left: 70px;
 }
 
 nav ul {
@@ -29,7 +31,8 @@ nav ul {
   list-style: none;
   gap: 70px;
   font-weight: 600;
-  margin-right: 90px;
+  margin-right: 100px;
+
 }
 
 nav a {
@@ -37,11 +40,56 @@ nav a {
   color: #fffbfb;
   font-size: 17px;
   text-align: center;
+  font-family: 'Poppins', sans-serif;
 }
 
 nav a:hover {
   color: #4b00a0;
 }
+
+/* Hamburger menu lines */
+.hamburger {
+  display: none; /* hidden by default, show only on small screens */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+}
+
+/* Hide nav links on mobile by default */
+.nav-links {
+  display: flex;
+  gap: 70px;
+}
+
+
+
+
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.hamburger span {
+  transition: all 0.3s ease;
+}
+
+
 
 /* HERO */
 .hero {
@@ -53,7 +101,7 @@ nav a:hover {
 .hero-content {
   display: flex;
   align-items: center;
-  justify-content: center; /* center items horizontally */
+  justify-content: center; 
   gap: 80px;
 
   max-width: 1200px; /* control width */
@@ -70,9 +118,9 @@ nav a:hover {
 
 /* TEXT */
 .hero-text h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
+  font-size: 25px;
   text-align: center;
+  margin-bottom: 80px;
 }
 
 .hero-text span {
@@ -83,35 +131,44 @@ nav a:hover {
 .small-title {
   font-size: 14px;
   margin: 15px 0;
-  color: #aaa;
-  text-align: center;
+  color: #ffffff;
+  font-weight: 600;
+  display: flex;
+  /* position: relative; */
 }
 
 .hero-text h1 {
   font-size: 56px;
   line-height: 1.2;
   font-weight: 600;
-  text-align: center;
+  margin: 15px 0;
 }
 
-.highlight {
-  position: absolute; /* absolute to match Figma coordinates */
-  left: 875px;
-  top: 435px;
 
+.description{
+  font-size: 14px;
+  margin: 15px 0;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+
+
+/* Highlight wrapper around the word */
+.hero-text .highlight {
+  position: relative;      /* stay with text */
   display: inline-block;
   color: #a855f7;
   z-index: 1;
 
-  width: 188.58px;  /* Figma width */
-  height: 57.9px;   /* Figma height */
-  transform: rotate(4.74deg); /* Figma rotation */
-  text-align: center; /* center text if needed */
+  width: 188.58px;  
+  height: 57.9px;   
+  text-align: center; 
   line-height: 57.9px; /* vertically center text */
 }
 
 /* Ellipse outline */
-.highlight::before {
+.hero-text .highlight::before {
   content: "";
   position: absolute;
   top: 0;
@@ -120,41 +177,62 @@ nav a:hover {
   height: 100%;
 
   border: 1px solid rgba(255,255,255,0.8);
-  border-radius: 50% / 50%; /* perfect ellipse matching width & height */
-
-  transform: rotate(4.74deg); /* same tilt as Figma */
+  border-radius: 50% / 50%; /* perfect ellipse */
+  
+  /* Tilt ellipse only */
+  transform: rotate(-4.74deg);
+  transform-origin: center;
   z-index: -1;
 }
 
 .sub-text {
-  font-size: 12px;
+  font-size: 15px;
   color: #aaa;
   margin-top: 10px;
 }
 
 /* BOTTOM */
+/* BOTTOM TEXT CONTAINER */
 .bottom-text {
-  margin-top: 80px;
-  text-align: center;
+  max-width: 800px;
+  margin: 50px auto;            /* center container horizontally */
+  padding: 0 100px;  
+
 }
 
-.bottom-text h2 {
-  font-size: 48px;
-  font-weight: 500;
-}
 
+/* Typing effect */
 .typing {
-  margin-top: 10px;
-  color: #aaa;
+  display: inline-block;         
+  color: #fcfcfc;               /* purple highlight */
+  font-family: 'Preahvihear', 'Poppins', sans-serif;
+  font-size: 35px;
+  white-space: nowrap;          
+  overflow: hidden;             
+  border-right: 4px solid #a855f7; /* blinking cursor */
+  padding-right: 5px;           
+  margin-bottom: 20px;          /* spacing before description */
+  animation: blink 1s infinite;
 }
 
-.description {
-  max-width: 700px;
-  margin: 30px auto;
-  font-size: 14px;
-  color: #ccc;
-  line-height: 1.8;
+/* Blinking cursor animation */
+@keyframes blink {
+  0%, 5%, 100% { border-color: transparent; }
+  25%, 75% { border-color: #a855f7; }
 }
+
+/* Description text */
+.bottom-text .description {
+  font-size: 16px;
+  color: #fff8f8;
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto;               /* center description */
+}
+
+
+
+
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
@@ -165,7 +243,31 @@ nav a:hover {
   
   .nav a{
     font-size: 16px;
+
   }
+
+  
+  .nav-links {
+    display: none; /* hide links on mobile */
+    flex-direction: column;
+    gap: 20px;
+    background: #4b0f8b;
+    position: absolute;
+    top: 70px; /* below navbar */
+    right: 0;
+    width: 200px;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .hamburger {
+    display: flex; /* show hamburger on small screens */
+  }
+
+  .nav-links.active {
+    display: flex; /* show menu when active */
+  }
+}
 
   .hero-img img {
   width: 250px;
@@ -174,4 +276,62 @@ nav a:hover {
   .hero-text h1 {
     font-size: 40px;
   }
+  .h3{
+    margin-bottom: 5px;
+  }
+  
+
+
+  /* Highlight wrapper around the word */
+  .hero-text .highlight {
+    position: relative;      /* stay with text */
+    display: inline-block;
+    color: #a855f7;
+    z-index: 1;
+
+
+    width: 188.58px;  
+    height: 57.9px;   
+    text-align: center; 
+    line-height: 57.9px; /* vertically center text */
+  }
+
+  /* Ellipse outline */
+  .hero-text .highlight::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 25px;
+    width: 130px;
+    height: 100%;
+   
+
+    border: 1px solid rgba(255,255,255,0.8);
+    border-radius: 50% / 50%; /* perfect ellipse */
+    
+    /* Tilt ellipse only */
+    transform: rotate(-4.74deg);
+    transform-origin: center;
+    z-index: -1;
+  }
+
+  .bottom-text h2 {
+    font-size: 36px;
+  }
+
+  .typing {
+    font-size: 28px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+
+
+.description {
+  max-width: 700px;
+  margin: 30px auto;
+  font-size: 14px;
+  color: #ccc;
+  line-height: 1.8;
 }
