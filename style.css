@@ -52,15 +52,7 @@ nav a:hover {
   color: #4b00a0;
 }
 
-
-.nav-links {
-  display: flex;
-  margin-right: 150px;
-  gap:  90px;
-}
-
-
-/* Hamburger menu lines */
+/* ========== ANIMATED HAMBURGER MENU ========== */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -69,27 +61,60 @@ nav a:hover {
   height: 21px;
   cursor: pointer;
   z-index: 100;
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.hamburger:hover {
+  transform: scale(1.1);
+}
+
+.hamburger:active {
+  transform: scale(0.95);
 }
 
 .hamburger span {
   display: block;
   height: 3px;
   background-color: #fff;
-  border-radius: 2px;
-  transition: all 0.3s ease;
+  border-radius: 10px;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-/* Hamburger animation when open */
+/* Hamburger animation when open - Cross morphing with bounce */
 .hamburger.open span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: rotate(45deg) translate(8px, 8px);
+  background-color: #a855f7;
 }
 
 .hamburger.open span:nth-child(2) {
   opacity: 0;
+  transform: scaleX(0);
 }
 
 .hamburger.open span:nth-child(3) {
   transform: rotate(-45deg) translate(7px, -7px);
+  background-color: #a855f7;
+}
+
+/* Menu overlay background when open */
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  z-index: 98;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.nav-overlay.active {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* FLEX ROW */
@@ -221,13 +246,6 @@ nav a:hover {
 
 /* Tablet and small desktop (max-width: 1024px) */
 @media (max-width: 1024px) {
-
-  .nav-links {
-  display: flex;
-  margin-right: 90px;
-  gap:  60px;
-}
-
   .hero-content {
     gap: 50px;
   }
@@ -276,35 +294,72 @@ nav a:hover {
     font-size: 24px;
   }
 
-  /* Hide nav links and show hamburger */
+  /* Show hamburger */
   .hamburger {
     display: flex;
   }
 
+  /* Slide-in menu from right with animation */
   nav ul {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 250px;
+    width: 280px;
     height: 100vh;
-    background: #16002e;
+    background: linear-gradient(135deg, #16002e 0%, #2a0a4a 100%);
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 40px;
-    transition: right 0.3s ease;
+    transition: right 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     z-index: 99;
     margin: 0;
     padding: 0;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
   }
 
   nav ul.active {
     right: 0;
   }
 
+  /* Animated menu items */
+  nav ul li {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.3s ease;
+  }
+
+  nav ul.active li {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Staggered animation for menu items */
+  nav ul.active li:nth-child(1) { transition-delay: 0.1s; }
+  nav ul.active li:nth-child(2) { transition-delay: 0.2s; }
+  nav ul.active li:nth-child(3) { transition-delay: 0.3s; }
+  nav ul.active li:nth-child(4) { transition-delay: 0.4s; }
+
   nav ul li a {
-    font-size: 20px;
+    font-size: 22px;
+    font-weight: 500;
+    position: relative;
+  }
+
+  /* Underline animation for menu items */
+  nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #a855f7;
+    transition: width 0.3s ease;
+  }
+
+  nav ul li a:hover::after {
+    width: 100%;
   }
 
   .hero-content {
@@ -378,11 +433,11 @@ nav a:hover {
   }
 
   nav ul {
-    width: 220px;
+    width: 250px;
   }
 
   nav ul li a {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .hero-content {
@@ -454,11 +509,11 @@ nav a:hover {
   }
 
   nav ul {
-    width: 200px;
+    width: 220px;
   }
 
   nav ul li a {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .hero-img img {
@@ -534,10 +589,10 @@ nav a:hover {
   }
 
   nav ul {
-    width: 180px;
+    width: 200px;
   }
 
   nav ul li a {
-    font-size: 15px;
+    font-size: 16px;
   }
 }
