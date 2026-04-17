@@ -251,9 +251,9 @@ nav a:hover {
 .buttons {
   display: flex;
   gap: 30px;
-  max-width: 700px;
+  max-width: 500px;
   margin: 40px auto 80px auto;
-  padding: 0 20px;
+  padding: 0px 20px;
 }
 
 /* Make buttons align with the description text above */
@@ -262,7 +262,7 @@ nav a:hover {
 }
 
 .buttons button {
-  padding: 14px 32px;
+  padding: 10px 30px;
   font-size: 16px;
   font-weight: 600;
   font-family: 'Poppins', sans-serif;
@@ -275,7 +275,7 @@ nav a:hover {
 
 /* View Projects button - Solid Purple */
 .btn-view-projects {
-  background: linear-gradient(135deg, #a855f7, #7c3aed);
+  background: linear-gradient(135deg, #a955f7ef, #7c3aed67);
   color: white;
   box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
 }
@@ -288,17 +288,18 @@ nav a:hover {
 
 /* Contact Me button - Outlined Purple (FIXED) */
 .btn-contact-me {
-  background: transparent;
+  background: #a955f72c;
   color: #a855f7;
   border: 2px solid #a855f7;
+    background:transparent;
 }
 
 .btn-contact-me:hover {
-  background: rgba(168, 85, 247, 0.15);
+
   transform: translateY(-3px);
-  border-color: #c084fc;
+  border-color: #a76be4;
   color: #c084fc;
-  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.2);
+  box-shadow: 0 8px 25px rgba(105, 73, 136, 0.76);
 }
 
 /* Active state for both buttons */
