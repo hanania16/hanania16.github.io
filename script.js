@@ -59,3 +59,30 @@ document.addEventListener("keydown", (e) => {
     closeMenu();
   }
 });
+
+// Add this to your script.js file to make buttons interactive
+document.addEventListener('DOMContentLoaded', function() {
+  // View Projects button
+  const viewProjectsBtn = document.querySelector('.btn-view-projects');
+  if (viewProjectsBtn) {
+    viewProjectsBtn.addEventListener('click', function() {
+      // Add your projects section ID or URL here
+      alert('View Projects clicked - Add your link or section');
+      // window.location.href = '#projects';
+      // OR
+      // window.open('projects.html', '_blank');
+    });
+  }
+  
+  // Contact Me button
+  const contactMeBtn = document.querySelector('.btn-contact-me');
+  if (contactMeBtn) {
+    contactMeBtn.addEventListener('click', function() {
+      // Add your contact section ID or URL here
+      alert('Contact Me clicked - Add your link or section');
+      // window.location.href = '#contact';
+      // OR
+      // window.open('contact.html', '_blank');
+    });
+  }
+});
