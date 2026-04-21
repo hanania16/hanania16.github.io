@@ -2,10 +2,17 @@
 
 // Render Hero Section
 function renderHero() {
-  document.querySelector('.hero-text h3').innerHTML = `Hello! I am <span>${portfolioData.personal.name}</span>`;
-  document.querySelector('.typing').innerHTML = `I'm a ${portfolioData.personal.title}.`;
-  document.querySelector('.bottom-text .description').innerHTML = portfolioData.personal.bio;
-  document.querySelector('.hero-img img').src = portfolioData.personal.profileImage;
+  const heroName = document.querySelector('.hero-text h3 span');
+  if (heroName) heroName.innerHTML = portfolioData.personal.name;
+  
+  const typingElement = document.querySelector(".typing");
+  if (typingElement) typingElement.innerHTML = `I'm a ${portfolioData.personal.title}.`;
+  
+  const description = document.querySelector('.bottom-text .description');
+  if (description) description.innerHTML = portfolioData.personal.bio;
+  
+  const profileImg = document.querySelector('.hero-img img');
+  if (profileImg) profileImg.src = portfolioData.personal.profileImage;
 }
 
 // Render Skills Section
