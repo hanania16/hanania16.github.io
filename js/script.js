@@ -1,17 +1,50 @@
-// Typing effect
+// ========== INTERACTIVE JS ==========
+
+// Typing effect with multiple texts
 const typingElement = document.querySelector(".typing");
-const text = "I'm a Software Engineer.";
-let index = 0;
+const texts = [
+  "I'm a Software Engineer. 💻",
+  "I'm a UI/UX Designer. 🎨",
+  "I'm a Creative Problem Solver. ⚡"
+];
+let textIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
 
 function typeEffect() {
-  if (index < text.length) {
-    typingElement.innerHTML += text.charAt(index);
-    index++;
-    setTimeout(typeEffect, 40);
+  if (!typingElement) return;
+  
+  const currentText = texts[textIndex];
+  
+  if (isDeleting) {
+    typingElement.innerHTML = currentText.substring(0, charIndex - 1);
+    charIndex--;
+  } else {
+    typingElement.innerHTML = currentText.substring(0, charIndex + 1);
+    charIndex++;
   }
+  
+  if (!isDeleting && charIndex === currentText.length) {
+    isDeleting = true;
+    setTimeout(typeEffect, 2000);
+    return;
+  }
+  
+  if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    textIndex = (textIndex + 1) % texts.length;
+    setTimeout(typeEffect, 500);
+    return;
+  }
+  
+  const speed = isDeleting ? 50 : 100;
+  setTimeout(typeEffect, speed);
 }
 
-typeEffect();
+// Start typing effect when page loads
+if (typingElement) {
+  typeEffect();
+}
 
 // Hamburger menu with enhanced animations
 const hamburger = document.getElementById("hamburger");
@@ -19,28 +52,30 @@ const navLinks = document.getElementById("nav-links");
 const overlay = document.getElementById("navOverlay");
 
 function openMenu() {
-  navLinks.classList.add("active");
-  hamburger.classList.add("open");
+  if (navLinks) navLinks.classList.add("active");
+  if (hamburger) hamburger.classList.add("open");
   if (overlay) overlay.classList.add("active");
-  document.body.style.overflow = "hidden"; // Prevent scrolling when menu is open
+  document.body.style.overflow = "hidden";
 }
 
 function closeMenu() {
-  navLinks.classList.remove("active");
-  hamburger.classList.remove("open");
+  if (navLinks) navLinks.classList.remove("active");
+  if (hamburger) hamburger.classList.remove("open");
   if (overlay) overlay.classList.remove("active");
-  document.body.style.overflow = ""; // Restore scrolling
+  document.body.style.overflow = "";
 }
 
 // Toggle menu on hamburger click
-hamburger.addEventListener("click", (e) => {
-  e.stopPropagation();
-  if (navLinks.classList.contains("active")) {
-    closeMenu();
-  } else {
-    openMenu();
-  }
-});
+if (hamburger) {
+  hamburger.addEventListener("click", (e) => {
+    e.stopPropagation();
+    if (navLinks && navLinks.classList.contains("active")) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+}
 
 // Close menu when clicking on overlay
 if (overlay) {
@@ -55,22 +90,23 @@ navItems.forEach(item => {
 
 // Close menu on escape key press
 document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && navLinks.classList.contains("active")) {
+  if (e.key === "Escape" && navLinks && navLinks.classList.contains("active")) {
     closeMenu();
   }
 });
 
-// Add this to your script.js file to make buttons interactive
+// Button interactions
 document.addEventListener('DOMContentLoaded', function() {
   // View Projects button
   const viewProjectsBtn = document.querySelector('.btn-view-projects');
   if (viewProjectsBtn) {
     viewProjectsBtn.addEventListener('click', function() {
-      // Add your projects section ID or URL here
-      alert('View Projects clicked - Add your link or section');
-      // window.location.href = '#projects';
-      // OR
-      // window.open('projects.html', '_blank');
+      const projectsSection = document.querySelector('#projects');
+      if (projectsSection) {
+        projectsSection.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        alert('View Projects clicked!');
+      }
     });
   }
   
@@ -78,13 +114,39 @@ document.addEventListener('DOMContentLoaded', function() {
   const contactMeBtn = document.querySelector('.btn-contact-me');
   if (contactMeBtn) {
     contactMeBtn.addEventListener('click', function() {
-      // Add your contact section ID or URL here
-      alert('Contact Me clicked - Add your link or section');
-      // window.location.href = '#contact';
-      // OR
-      // window.open('contact.html', '_blank');
+      const contactSection = document.querySelector('#contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        alert('Contact Me clicked!');
+      }
     });
   }
 });
 
+// Navbar scroll effect
+window.addEventListener('scroll', function() {
+  const navbar = document.querySelector('.navbar');
+  if (navbar) {
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  }
+});
 
+// Smooth scrolling for navigation links
+document.querySelectorAll('.nav-links a').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href');
+    const targetSection = document.querySelector(targetId);
+    if (targetSection) {
+      targetSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  });
+});
