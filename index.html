@@ -134,12 +134,40 @@
     <h2 class="section-title">Get In <span>Touch</span></h2>
     <p class="section-subtitle">I'd love to hear from you!</p>
     <div class="contact-content">
-      <div class="contact-info" id="contact-info"></div>
+      <div class="contact-info">
+        <div class="contact-item">
+          <span class="contact-icon">📧</span>
+          <div>
+            <h4>Email</h4>
+            <p>hanania@example.com</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📍</span>
+          <div>
+            <h4>Location</h4>
+            <p>Ethiopia, Addis Ababa</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">💼</span>
+          <div>
+            <h4>Work</h4>
+            <p>Open for opportunities</p>
+          </div>
+        </div>
+        <div class="contact-social">
+          <a href="mailto:hanania@example.com" class="social-icon" title="Email">📧</a>
+          <a href="https://github.com/hanania16" class="social-icon" title="GitHub">💻</a>
+          <a href="https://linkedin.com/in/hanania" class="social-icon" title="LinkedIn">🔗</a>
+          <a href="https://twitter.com/hanania_dev" class="social-icon" title="Twitter">🐦</a>
+        </div>
+      </div>
       <form class="contact-form" id="contact-form">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <input type="text" placeholder="Subject">
-        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="text" name="subject" placeholder="Subject">
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
         <button type="submit" class="btn-submit">Send Message</button>
       </form>
     </div>
@@ -149,16 +177,13 @@
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-content">
-    <!-- Logo & Bio -->
-    <div class="footer-logo">
-      <h3>HM</h3>
+    <div class="footer-brand">
+      <h3 class="footer-logo">HM</h3>
       <p>Creating meaningful digital experiences that blend design and functionality.</p>
     </div>
-    
-    <!-- Quick Links -->
-    <div class="footer-links">
+    <div class="footer-links-section">
       <h4>Quick Links</h4>
-      <ul>
+      <ul class="footer-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#experience">Experience</a></li>
@@ -166,30 +191,17 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
-    
-    <!-- Social Links -->
-    <div class="footer-social">
-      <h4>Connect With Me</h4>
+    <div class="footer-social-section">
+      <h4>Connect</h4>
       <div class="social-icons">
-        <a href="#" class="social-icon">📧</a>
-        <a href="#" class="social-icon">💻</a>
-        <a href="#" class="social-icon">🔗</a>
-        <a href="#" class="social-icon">🐦</a>
-        <a href="#" class="social-icon">📷</a>
+        <a href="mailto:hanania@example.com" class="social-icon" title="Email">📧</a>
+        <a href="https://github.com/hanania16" class="social-icon" title="GitHub">💻</a>
+        <a href="https://linkedin.com/in/hanania" class="social-icon" title="LinkedIn">🔗</a>
+        <a href="https://twitter.com/hanania_dev" class="social-icon" title="Twitter">🐦</a>
+        <a href="https://instagram.com/hanania" class="social-icon" title="Instagram">📷</a>
       </div>
     </div>
-    
-    <!-- Newsletter -->
-    <div class="footer-newsletter">
-      <h4>Stay Updated</h4>
-      <p>Get notified about new projects and updates</p>
-      <form class="newsletter-form" id="newsletter-form">
-        <input type="email" placeholder="Your email address" required>
-        <button type="submit">Subscribe →</button>
-      </form>
-    </div>
   </div>
-  
   <div class="footer-bottom">
     <p>© 2026 Hanania Meseret. Crafted with <span class="heart">❤️</span> using HTML, CSS & JavaScript</p>
   </div>
@@ -197,10 +209,6 @@
 
 <!-- Back to Top Button -->
 <button class="back-to-top" id="backToTop">↑</button>
-
-<script src="script.js"></script>
-</body>
-</html>
 
 <script src="script.js"></script>
 </body>
