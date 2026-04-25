@@ -27,20 +27,15 @@ body {
 }
 
 /* Navigation */
-nav {
-  display: flex;
-  align-items: center;
-}
-
-nav ul {
+.nav-links {
   display: flex;
   list-style: none;
-  gap: 90px;  /* More spacing between links */
+  gap: 90px;
   font-weight: 600;
-  margin-right: 170px;  /* Space from right edge */
+  margin-right: 170px;
 }
 
-nav a {
+.nav-links a {
   text-decoration: none;
   color: #fffbfb;
   font-size: 17px;
@@ -49,7 +44,7 @@ nav a {
   transition: color 0.3s ease;
 }
 
-nav a:hover {
+.nav-links a:hover {
   color: #4b00a0;
 }
 
@@ -1032,7 +1027,7 @@ nav a:hover {
     width: 250px;
   }
 
-  nav ul li a {
+  .nav-links li a {
     font-size: 20px;
   }
 
