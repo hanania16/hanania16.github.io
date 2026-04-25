@@ -876,111 +876,7 @@ body {
   font-family: 'Preahvihear', 'Poppins', sans-serif;
 }
 
-/* ========== FEATURED PROJECT SECTION ========== */
-.featured-project-section {
-  padding: 80px 0;
-}
-
-.featured-project {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
-  align-items: center;
-  background: rgba(42, 10, 74, 0.3);
-  border-radius: 20px;
-  padding: 40px;
-  border: 1px solid rgba(168, 85, 247, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.featured-project:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(168, 85, 247, 0.2);
-  border-color: rgba(168, 85, 247, 0.5);
-}
-
-.project-content h3 {
-  font-size: 32px;
-  color: #a855f7;
-  margin-bottom: 20px;
-  font-weight: 600;
-}
-
-.project-description {
-  color: #ccc;
-  line-height: 1.8;
-  margin-bottom: 25px;
-  font-size: 16px;
-}
-
-.project-tech-stack {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 30px;
-}
-
-.project-tech-stack span {
-  background: rgba(168, 85, 247, 0.2);
-  padding: 6px 15px;
-  border-radius: 25px;
-  font-size: 13px;
-  color: #c084fc;
-  font-weight: 500;
-}
-
-.project-actions {
-  display: flex;
-  gap: 25px;
-}
-
-.btn-live-demo, .btn-github {
-  padding: 10px 24px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  font-size: 14px;
-}
-
-.btn-live-demo {
-  background: linear-gradient(135deg, #a855f7, #7c3aed);
-  color: white;
-}
-
-.btn-live-demo:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(168, 85, 247, 0.3);
-}
-
-.btn-github {
-  background: transparent;
-  color: #a855f7;
-  border: 1px solid #a855f7;
-}
-
-.btn-github:hover {
-  background: rgba(168, 85, 247, 0.1);
-  transform: translateY(-2px);
-}
-
-.project-image-placeholder {
-  width: 100%;
-  height: 300px;
-}
-
-.placeholder-box {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #2a0a4a, #16002e);
-  border-radius: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px dashed rgba(168, 85, 247, 0.5);
-  color: #a855f7;
-  font-size: 18px;
-}
+/* ========== CALL TO ACTION SECTION ========== */
 
 /* ========== RESPONSIVE DESIGN ========== */
 @media (max-width: 768px) {
@@ -997,50 +893,19 @@ body {
     font-size: 14px;
   }
   
-  .cta-text {
-    font-size: 22px;
-    padding: 0 20px;
-  }
-  
-  .featured-project {
-    grid-template-columns: 1fr;
-    padding: 25px;
-    gap: 30px;
-  }
-  
-  .project-content h3 {
-    font-size: 26px;
-  }
-  
-  .section-title {
-    font-size: 32px;
-    text-align: center;
-  }
-  
-  .experience-section,
-  .cta-section,
-  .featured-project-section {
-    padding: 50px 0;
-  }
-}
-
-@media (max-width: 480px) {
-  .project-actions {
-    flex-direction: column;
-    gap: 12px;
-  }
-  
-  .btn-live-demo, .btn-github {
-    text-align: center;
-  }
-  
-  .cta-text {
-    font-size: 18px;
-  }
-  
-  .experience-description {
-    font-size: 14px;
-  }
+   .cta-text {
+     font-size: 22px;
+     padding: 0 20px;
+   }
+   
+   .section-title {
+     font-size: 32px;
+     text-align: center;
+   }
+   
+   .experience-section,
+   .cta-section {
+     padding: 50px 0;
 }
 
 
