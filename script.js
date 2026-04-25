@@ -273,3 +273,43 @@ window.addEventListener('scroll', () => {
   if (window.scrollY > 50) navbar.classList.add('scrolled');
   else navbar.classList.remove('scrolled');
 });
+
+
+// ========== BACK TO TOP BUTTON ==========
+const backToTopBtn = document.getElementById('backToTop');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    backToTopBtn.classList.add('show');
+  } else {
+    backToTopBtn.classList.remove('show');
+  }
+});
+
+backToTopBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+
+// ========== NEWSLETTER FORM HANDLER ==========
+const newsletterForm = document.getElementById('newsletter-form');
+if (newsletterForm) {
+  newsletterForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = newsletterForm.querySelector('input').value;
+    alert(`Thanks for subscribing! Updates will be sent to ${email}`);
+    newsletterForm.reset();
+  });
+}
+
+// ========== UPDATE SOCIAL LINKS WITH REAL ICONS (Optional) ==========
+// Replace emoji icons with actual FontAwesome or keep as is
+const socialIcons = document.querySelectorAll('.social-icon');
+const socialLinks = ['mailto:hanania.meseret@example.com', 'https://github.com/', 'https://linkedin.com/', 'https://twitter.com/', 'https://instagram.com/'];
+socialIcons.forEach((icon, index) => {
+  if (socialLinks[index]) {
+    icon.href = socialLinks[index];
+  }
+});
