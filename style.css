@@ -1268,8 +1268,11 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 12px;
+  align-items: center;
+  gap: 16px;
   padding: 16px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .skill-card {
@@ -1280,43 +1283,50 @@ body {
 }
 
 .skill-logo {
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   background: rgba(22, 0, 46, 0.8);
   border: 1px solid rgba(168, 85, 247, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 4px;
+  margin-bottom: 0;
   transition: all 0.2s ease;
   overflow: hidden;
 }
 
 .skill-logo img {
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   object-fit: contain;
 }
 
-.skill-logo:hover {
-  border-color: #a855f7;
-  transform: scale(1.1);
-}
-
-.skill-label {
-  font-size: 10px;
-  color: #888;
-  text-align: center;
-  white-space: nowrap;
-}
-
-/* Soft skills - no images */
 .skill-soft .skill-logo {
-  font-size: 18px;
+  font-size: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.skill-label {
+  font-size: 11px;
+  color: transparent;
+  text-align: center;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+  margin-top: 6px;
+  opacity: 0;
+}
+
+.skill-card:hover .skill-label {
+  color: #aaa;
+  opacity: 1;
+}
+
+.skill-card:hover .skill-logo {
+  border-color: #a855f7;
+  transform: scale(1.1);
 }
 
 .tab-btn {
