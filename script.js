@@ -3,30 +3,30 @@ const portfolioData = {
   // Skills Data
   skills: {
     technical: [
-      { icon: "💻", name: "JavaScript/TypeScript", level: 90, years: "4 years", description: "Expert in modern ES6+, React, Node.js" },
-      { icon: "⚛️", name: "React.js", level: 88, years: "3 years", description: "Hooks, Redux, Next.js, Context API" },
-      { icon: "🐍", name: "Python", level: 85, years: "3 years", description: "Django, Flask, Data Analysis" },
-      { icon: "🚀", name: "Node.js", level: 82, years: "2 years", description: "Express, REST APIs, Authentication" },
-      { icon: "🎨", name: "HTML5/CSS3", level: 92, years: "4 years", description: "Flexbox, Grid, Animations, Sass" },
-      { icon: "🗄️", name: "MongoDB/PostgreSQL", level: 78, years: "2 years", description: "Database design, Queries, Optimization" },
-      { icon: "📱", name: "React Native", level: 75, years: "1.5 years", description: "Cross-platform mobile apps" },
-      { icon: "🔧", name: "Git & GitHub", level: 85, years: "3 years", description: "Version control, Collaboration, CI/CD" }
+      { icon: "[JS]", name: "JavaScript/TypeScript", level: 90, years: "4 years", description: "Expert in modern ES6+, React, Node.js" },
+      { icon: "[React]", name: "React.js", level: 88, years: "3 years", description: "Hooks, Redux, Next.js, Context API" },
+      { icon: "[Py]", name: "Python", level: 85, years: "3 years", description: "Django, Flask, Data Analysis" },
+      { icon: "[Node]", name: "Node.js", level: 82, years: "2 years", description: "Express, REST APIs, Authentication" },
+      { icon: "[Web]", name: "HTML5/CSS3", level: 92, years: "4 years", description: "Flexbox, Grid, Animations, Sass" },
+      { icon: "[DB]", name: "MongoDB/PostgreSQL", level: 78, years: "2 years", description: "Database design, Queries, Optimization" },
+      { icon: "[Mobile]", name: "React Native", level: 75, years: "1.5 years", description: "Cross-platform mobile apps" },
+      { icon: "[Git]", name: "Git & GitHub", level: 85, years: "3 years", description: "Version control, Collaboration, CI/CD" }
     ],
     design: [
-      { icon: "🎨", name: "Figma", level: 90, years: "3 years", description: "Prototyping, Components, Design systems" },
-      { icon: "🎭", name: "Adobe XD", level: 85, years: "2 years", description: "Wireframing, Interactive prototypes" },
-      { icon: "🖌️", name: "Photoshop", level: 75, years: "2 years", description: "Image editing, Graphics design" },
-      { icon: "✏️", name: "Illustrator", level: 70, years: "1.5 years", description: "Vector graphics, Icons, Logos" },
-      { icon: "🎬", name: "Premiere Pro", level: 65, years: "1 year", description: "Video editing, Motion graphics" },
-      { icon: "📊", name: "Miro", level: 80, years: "2 years", description: "Whiteboarding, User flows, Brainstorming" }
+      { icon: "[Figma]", name: "Figma", level: 90, years: "3 years", description: "Prototyping, Components, Design systems" },
+      { icon: "[XD]", name: "Adobe XD", level: 85, years: "2 years", description: "Wireframing, Interactive prototypes" },
+      { icon: "[PS]", name: "Photoshop", level: 75, years: "2 years", description: "Image editing, Graphics design" },
+      { icon: "[AI]", name: "Illustrator", level: 70, years: "1.5 years", description: "Vector graphics, Icons, Logos" },
+      { icon: "[PP]", name: "Premiere Pro", level: 65, years: "1 year", description: "Video editing, Motion graphics" },
+      { icon: "[Miro]", name: "Miro", level: 80, years: "2 years", description: "Whiteboarding, User flows, Brainstorming" }
     ],
     soft: [
-      { icon: "💬", name: "Communication", level: 88, description: "Clear documentation, Team collaboration, Client presentations" },
-      { icon: "🧩", name: "Problem Solving", level: 90, description: "Analytical thinking, Creative solutions, Debugging" },
-      { icon: "⏰", name: "Time Management", level: 85, description: "Meeting deadlines, Prioritization, Agile methodology" },
-      { icon: "🤝", name: "Teamwork", level: 90, description: "Cross-functional collaboration, Code reviews, Mentoring" },
-      { icon: "🎯", name: "Leadership", level: 82, description: "Project management, Decision making, Team motivation" },
-      { icon: "🔄", name: "Adaptability", level: 88, description: "Learning new tech, Flexible mindset, Embracing change" }
+      { icon: "[Com]", name: "Communication", level: 88, description: "Clear documentation, Team collaboration, Client presentations" },
+      { icon: "[Solve]", name: "Problem Solving", level: 90, description: "Analytical thinking, Creative solutions, Debugging" },
+      { icon: "[Time]", name: "Time Management", level: 85, description: "Meeting deadlines, Prioritization, Agile methodology" },
+      { icon: "[Team]", name: "Teamwork", level: 90, description: "Cross-functional collaboration, Code reviews, Mentoring" },
+      { icon: "[Lead]", name: "Leadership", level: 82, description: "Project management, Decision making, Team motivation" },
+      { icon: "[Adapt]", name: "Adaptability", level: 88, description: "Learning new tech, Flexible mindset, Embracing change" }
     ]
   },
   
@@ -169,7 +169,7 @@ function renderContact() {
 
 // ========== TYPING EFFECT ==========
 const typingElement = document.querySelector(".typing");
-const texts = ["I'm a Software Engineer. 💻", "I'm a UI/UX Designer. 🎨", "I'm a Creative Problem Solver. ⚡"];
+const texts = ["I'm a Software Engineer", "I'm a UI/UX Designer", "I'm a Creative Problem Solver"];
 let textIndex = 0, charIndex = 0, isDeleting = false;
 
 function typeEffect() {
