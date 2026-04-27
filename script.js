@@ -3,30 +3,30 @@ const portfolioData = {
   // Skills Data
   skills: {
     technical: [
-      { icon: "[JS]", name: "JavaScript/TypeScript", level: 90, years: "4 years", description: "Expert in modern ES6+, React, Node.js" },
-      { icon: "[React]", name: "React.js", level: 88, years: "3 years", description: "Hooks, Redux, Next.js, Context API" },
-      { icon: "[Py]", name: "Python", level: 85, years: "3 years", description: "Django, Flask, Data Analysis" },
-      { icon: "[Node]", name: "Node.js", level: 82, years: "2 years", description: "Express, REST APIs, Authentication" },
-      { icon: "[Web]", name: "HTML5/CSS3", level: 92, years: "4 years", description: "Flexbox, Grid, Animations, Sass" },
-      { icon: "[DB]", name: "MongoDB/PostgreSQL", level: 78, years: "2 years", description: "Database design, Queries, Optimization" },
-      { icon: "[Mobile]", name: "React Native", level: 75, years: "1.5 years", description: "Cross-platform mobile apps" },
-      { icon: "[Git]", name: "Git & GitHub", level: 85, years: "3 years", description: "Version control, Collaboration, CI/CD" }
+      { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", name: "JavaScript/TypeScript", level: 90, years: "4 years", description: "Expert in modern ES6+, React, Node.js" },
+      { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", name: "React.js", level: 88, years: "3 years", description: "Hooks, Redux, Next.js, Context API" },
+      { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg", name: "Python", level: 85, years: "3 years", description: "Django, Flask, Data Analysis" },
+      { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg", name: "Node.js", level: 82, years: "2 years", description: "Express, REST APIs, Authentication" },
+      { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", name: "HTML5/CSS3", level: 92, years: "4 years", description: "Flexbox, Grid, Animations, Sass" },
+      { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg", name: "MongoDB/PostgreSQL", level: 78, years: "2 years", description: "Database design, Queries, Optimization" },
+      { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", name: "React Native", level: 75, years: "1.5 years", description: "Cross-platform mobile apps" },
+      { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg", name: "Git & GitHub", level: 85, years: "3 years", description: "Version control, Collaboration, CI/CD" }
     ],
     design: [
-      { icon: "[Figma]", name: "Figma", level: 90, years: "3 years", description: "Prototyping, Components, Design systems" },
-      { icon: "[XD]", name: "Adobe XD", level: 85, years: "2 years", description: "Wireframing, Interactive prototypes" },
-      { icon: "[PS]", name: "Photoshop", level: 75, years: "2 years", description: "Image editing, Graphics design" },
-      { icon: "[AI]", name: "Illustrator", level: 70, years: "1.5 years", description: "Vector graphics, Icons, Logos" },
-      { icon: "[PP]", name: "Premiere Pro", level: 65, years: "1 year", description: "Video editing, Motion graphics" },
-      { icon: "[Miro]", name: "Miro", level: 80, years: "2 years", description: "Whiteboarding, User flows, Brainstorming" }
+      { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg", name: "Figma", level: 90, years: "3 years", description: "Prototyping, Components, Design systems" },
+      { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xd/xd-original.svg", name: "Adobe XD", level: 85, years: "2 years", description: "Wireframing, Interactive prototypes" },
+      { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-original.svg", name: "Photoshop", level: 75, years: "2 years", description: "Image editing, Graphics design" },
+      { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-original.svg", name: "Illustrator", level: 70, years: "1.5 years", description: "Vector graphics, Icons, Logos" },
+      { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/premierepro/premierepro-original.svg", name: "Premiere Pro", level: 65, years: "1 year", description: "Video editing, Motion graphics" },
+      { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/miro/miro-original.svg", name: "Miro", level: 80, years: "2 years", description: "Whiteboarding, User flows, Brainstorming" }
     ],
     soft: [
-      { icon: "[Com]", name: "Communication", level: 88, description: "Clear documentation, Team collaboration, Client presentations" },
-      { icon: "[Solve]", name: "Problem Solving", level: 90, description: "Analytical thinking, Creative solutions, Debugging" },
-      { icon: "[Time]", name: "Time Management", level: 85, description: "Meeting deadlines, Prioritization, Agile methodology" },
-      { icon: "[Team]", name: "Teamwork", level: 90, description: "Cross-functional collaboration, Code reviews, Mentoring" },
-      { icon: "[Lead]", name: "Leadership", level: 82, description: "Project management, Decision making, Team motivation" },
-      { icon: "[Adapt]", name: "Adaptability", level: 88, description: "Learning new tech, Flexible mindset, Embracing change" }
+      { icon: "", name: "Communication", level: 88, description: "Clear documentation, Team collaboration, Client presentations" },
+      { icon: "", name: "Problem Solving", level: 90, description: "Analytical thinking, Creative solutions, Debugging" },
+      { icon: "", name: "Time Management", level: 85, description: "Meeting deadlines, Prioritization, Agile methodology" },
+      { icon: "", name: "Teamwork", level: 90, description: "Cross-functional collaboration, Code reviews, Mentoring" },
+      { icon: "", name: "Leadership", level: 82, description: "Project management, Decision making, Team motivation" },
+      { icon: "", name: "Adaptability", level: 88, description: "Learning new tech, Flexible mindset, Embracing change" }
     ]
   },
   
@@ -62,19 +62,16 @@ function renderSkills(category = 'technical') {
   if (!container) return;
 
   const skills = portfolioData.skills[category];
+  const isSoft = category === 'soft';
 
   container.innerHTML = `
     <div class="skills-grid">
       ${skills.map(skill => `
-        <div class="skill-card">
-          <div class="skill-header">
-            <div class="skill-icon">${skill.icon}</div>
-            <div class="skill-info">
-              <div class="skill-name">${skill.name}</div>
-              ${skill.years ? `<div class="skill-years">${skill.years}</div>` : ''}
-            </div>
+        <div class="skill-card ${isSoft ? 'skill-soft' : ''}">
+          <div class="skill-logo">
+            ${skill.icon ? `<img src="${skill.icon}" alt="${skill.name}" />` : skill.name}
           </div>
-          <div class="skill-description">${skill.description}</div>
+          <div class="skill-label">${skill.name}</div>
         </div>
       `).join('')}
     </div>

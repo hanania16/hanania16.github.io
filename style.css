@@ -1265,100 +1265,68 @@ body {
 
 /* Skills Grid */
 .skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 24px;
-}
-
-/* Skill Card */
-.skill-card {
-  background: rgba(22, 0, 46, 0.8);
-  border: 1px solid rgba(168, 85, 247, 0.15);
-  border-radius: 12px;
-  padding: 24px;
-  transition: border-color 0.2s ease, background 0.2s ease;
-}
-
-.skill-card:hover {
-  border-color: rgba(168, 85, 247, 0.4);
-  background: rgba(26, 2, 56, 0.9);
-}
-
-/* Skill Header */
-.skill-header {
   display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: 12px;
-}
-
-.skill-icon {
-  font-size: 36px;
-  line-height: 1;
-}
-
-.skill-info {
-  flex: 1;
-  min-width: 0;
-}
-
-.skill-name {
-  font-size: 17px;
-  font-weight: 600;
-  color: #fff;
-  margin-bottom: 3px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.skill-years {
-  font-size: 12px;
-  color: #a855f7;
-  font-weight: 500;
-}
-
-/* Skill Description */
-.skill-description {
-  font-size: 13px;
-  color: #aaa;
-  line-height: 1.5;
-  margin-top: 10px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .skills-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-  
-  .skill-card {
-    padding: 20px;
-  }
-  
-  .tab-btn {
-    padding: 10px 20px;
-    font-size: 14px;
-  }
-}
-
-.skill-tabs {
-  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 12px;
-  margin-bottom: 32px;
-  flex-wrap: wrap;
+  padding: 16px;
+}
+
+.skill-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 72px;
+}
+
+.skill-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(22, 0, 46, 0.8);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+  transition: all 0.2s ease;
+  overflow: hidden;
+}
+
+.skill-logo img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.skill-logo:hover {
+  border-color: #a855f7;
+  transform: scale(1.1);
+}
+
+.skill-label {
+  font-size: 10px;
+  color: #888;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Soft skills - no images */
+.skill-soft .skill-logo {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .tab-btn {
-  padding: 10px 22px;
-  font-size: 14px;
+  padding: 8px 16px;
+  font-size: 13px;
   font-weight: 500;
   background: transparent;
   border: 1px solid rgba(168, 85, 247, 0.25);
   color: #aaa;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
   transition: all 0.15s ease;
   font-family: 'Poppins', sans-serif;
@@ -1375,17 +1343,24 @@ body {
   color: #fff;
 }
 
-/* Skill Section */
+.skill-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
 .skills-section {
-  padding: 60px 0;
+  padding: 30px 0;
   background: linear-gradient(135deg, #0b001c, #12002a);
 }
 
 .section-subtitle {
   text-align: center;
-  color: #777;
-  margin-bottom: 32px;
-  font-size: 15px;
+  color: #666;
+  margin-bottom: 16px;
+  font-size: 13px;
 }
 
 /* ========== WORK EXPERIENCE SECTION ========== */
