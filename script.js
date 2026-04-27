@@ -60,9 +60,9 @@ const portfolioData = {
 function renderSkills(category = 'technical') {
   const container = document.getElementById('skills-container');
   if (!container) return;
-  
+
   const skills = portfolioData.skills[category];
-  
+
   container.innerHTML = `
     <div class="skills-grid">
       ${skills.map(skill => `
@@ -71,7 +71,7 @@ function renderSkills(category = 'technical') {
             <div class="skill-icon">${skill.icon}</div>
             <div class="skill-info">
               <div class="skill-name">${skill.name}</div>
-              ${skill.years ? `<div class="skill-years">📅 ${skill.years}</div>` : ''}
+              ${skill.years ? `<div class="skill-years">${skill.years}</div>` : ''}
             </div>
           </div>
           <div class="skill-progress-container">
@@ -80,7 +80,7 @@ function renderSkills(category = 'technical') {
               <span>${skill.level}%</span>
             </div>
             <div class="skill-progress-bar">
-              <div class="skill-progress-fill" data-level="${skill.level}"></div>
+              <div class="skill-progress-fill" style="width: ${skill.level}%"></div>
             </div>
           </div>
           <div class="skill-description">${skill.description}</div>
@@ -88,14 +88,6 @@ function renderSkills(category = 'technical') {
       `).join('')}
     </div>
   `;
-  
-  // Animate progress bars
-  setTimeout(() => {
-    document.querySelectorAll('.skill-progress-fill').forEach(bar => {
-      const level = bar.getAttribute('data-level');
-      bar.style.width = level + '%';
-    });
-  }, 100);
 }
 
 // Render Experience
