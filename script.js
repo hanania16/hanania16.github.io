@@ -74,15 +74,6 @@ function renderSkills(category = 'technical') {
               ${skill.years ? `<div class="skill-years">${skill.years}</div>` : ''}
             </div>
           </div>
-          <div class="skill-progress-container">
-            <div class="skill-progress-label">
-              <span>Proficiency</span>
-              <span>${skill.level}%</span>
-            </div>
-            <div class="skill-progress-bar">
-              <div class="skill-progress-fill" style="width: ${skill.level}%"></div>
-            </div>
-          </div>
           <div class="skill-description">${skill.description}</div>
         </div>
       `).join('')}
