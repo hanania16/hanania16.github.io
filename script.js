@@ -169,7 +169,7 @@ function renderContact() {
 
 // ========== TYPING EFFECT ==========
 const typingElement = document.querySelector(".typing");
-const texts = ["I'm a Software Engineer", "I'm a UI/UX Designer", "I'm a Creative Problem Solver"];
+const texts = ["I'm a Software Engineer", "I'm an Aspired Cloud Engineer", "I'm a Creative Problem Solver"];
 let textIndex = 0, charIndex = 0, isDeleting = false;
 
 function typeEffect() {
