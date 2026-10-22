@@ -583,7 +583,7 @@ function setupThemeToggle() {
   const themeToggleBtn = document.getElementById('theme-toggle');
   if (!themeToggleBtn) return;
 
-  const currentTheme = localStorage.getItem('theme') || 'dark';
+  const currentTheme = localStorage.getItem('theme') || 'light';
   document.documentElement.setAttribute('data-theme', currentTheme);
   updateThemeIcon(currentTheme);
 
@@ -608,16 +608,40 @@ function updateThemeIcon(theme) {
   }
 }
 
-// ========== SCROLL PROGRESS BAR ==========
+// ========== SCROLL PROGRESS BAR & BACKGROUND PARALLAX ==========
 function setupScrollProgress() {
   const progressBar = document.getElementById('scroll-progress');
-  if (!progressBar) return;
+  const patternLayer = document.getElementById('ambientPattern');
+  const floatingSquares = document.getElementById('floatingSquares');
+
+  let ticking = false;
 
   window.addEventListener('scroll', () => {
-    const scrollTop = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const progress = (scrollTop / docHeight) * 100;
-    progressBar.style.width = `${progress}%`;
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+        // Update top scrollbar width
+        if (progressBar && docHeight > 0) {
+          const progress = (scrollTop / docHeight) * 100;
+          progressBar.style.width = `${progress}%`;
+        }
+
+        // Animated parallax for grid pattern on scroll (smooth 0.15 factor)
+        if (patternLayer) {
+          patternLayer.style.transform = `translate3d(0, ${-(scrollTop * 0.12) % 48}px, 0)`;
+        }
+
+        // Parallax depth shift for floating squares
+        if (floatingSquares) {
+          floatingSquares.style.transform = `translate3d(0, ${-(scrollTop * 0.18)}px, 0)`;
+        }
+
+        ticking = false;
+      });
+      ticking = true;
+    }
   }, { passive: true });
 }
 

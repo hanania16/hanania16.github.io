@@ -255,23 +255,87 @@ body {
   100% { transform: translate(-100px, -40px) scale(1); }
 }
 
-/* Layer 2: Square Grid Pattern with Radial Falloff */
+/* Layer 2: Animated Square Grid Pattern with Radial Falloff */
 .ambient-pattern-layer {
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+  inset: -60px;
+  width: calc(100% + 120px);
+  height: calc(100% + 120px);
   opacity: var(--bg-pattern-opacity);
   /* Tech square grid pattern SVG with intersection nodes */
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M 48 0 L 0 0 0 48' fill='none' stroke='%23a855f7' stroke-opacity='0.22' stroke-width='1'/%3E%3Ccircle cx='0' cy='0' r='1.5' fill='%23c084fc' fill-opacity='0.55'/%3E%3Ccircle cx='48' cy='0' r='1.5' fill='%23c084fc' fill-opacity='0.55'/%3E%3Ccircle cx='0' cy='48' r='1.5' fill='%23c084fc' fill-opacity='0.55'/%3E%3Ccircle cx='48' cy='48' r='1.5' fill='%23c084fc' fill-opacity='0.55'/%3E%3C/svg%3E");
   background-size: 48px 48px;
+  background-repeat: repeat;
   /* Radial mask: strongest at hero/top, smoothly translucent down page */
-  mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, black 40%, rgba(0, 0, 0, 0.45) 80%, rgba(0, 0, 0, 0.2) 100%);
-  -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, black 40%, rgba(0, 0, 0, 0.45) 80%, rgba(0, 0, 0, 0.2) 100%);
+  mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, black 45%, rgba(0, 0, 0, 0.45) 80%, rgba(0, 0, 0, 0.2) 100%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, black 45%, rgba(0, 0, 0, 0.45) 80%, rgba(0, 0, 0, 0.2) 100%);
+  will-change: transform, background-position;
+  animation: gridDrift 40s linear infinite;
 }
 
 [data-theme="light"] .ambient-pattern-layer {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M 48 0 L 0 0 0 48' fill='none' stroke='%239333ea' stroke-opacity='0.24' stroke-width='1'/%3E%3Ccircle cx='0' cy='0' r='1.5' fill='%237e22ce' fill-opacity='0.5'/%3E%3Ccircle cx='48' cy='0' r='1.5' fill='%237e22ce' fill-opacity='0.5'/%3E%3Ccircle cx='0' cy='48' r='1.5' fill='%237e22ce' fill-opacity='0.5'/%3E%3Ccircle cx='48' cy='48' r='1.5' fill='%237e22ce' fill-opacity='0.5'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M 48 0 L 0 0 0 48' fill='none' stroke='%239333ea' stroke-opacity='0.28' stroke-width='1'/%3E%3Ccircle cx='0' cy='0' r='1.5' fill='%237e22ce' fill-opacity='0.55'/%3E%3Ccircle cx='48' cy='0' r='1.5' fill='%237e22ce' fill-opacity='0.55'/%3E%3Ccircle cx='0' cy='48' r='1.5' fill='%237e22ce' fill-opacity='0.55'/%3E%3Ccircle cx='48' cy='48' r='1.5' fill='%237e22ce' fill-opacity='0.55'/%3E%3C/svg%3E");
+}
+
+@keyframes gridDrift {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: 48px 48px;
+  }
+}
+
+/* Layer 2.5: Floating Tech Squares (Living geometric boxes drifting through space) */
+.floating-squares-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.sq {
+  position: absolute;
+  border: 1px solid rgba(168, 85, 247, 0.28);
+  border-radius: 8px;
+  background: rgba(168, 85, 247, 0.04);
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.12), inset 0 0 10px rgba(168, 85, 247, 0.06);
+  backdrop-filter: blur(1px);
+  will-change: transform, opacity;
+  animation: floatSquare 18s ease-in-out infinite alternate;
+}
+
+[data-theme="light"] .sq {
+  border-color: rgba(147, 51, 234, 0.28);
+  background: rgba(147, 51, 234, 0.04);
+  box-shadow: 0 0 12px rgba(147, 51, 234, 0.15);
+}
+
+.sq-1 { width: 44px; height: 44px; top: 12%; left: 8%; animation-duration: 16s; animation-delay: 0s; }
+.sq-2 { width: 72px; height: 72px; top: 28%; right: 10%; animation-duration: 22s; animation-delay: -3s; }
+.sq-3 { width: 32px; height: 32px; top: 55%; left: 14%; animation-duration: 14s; animation-delay: -6s; }
+.sq-4 { width: 60px; height: 60px; top: 68%; right: 18%; animation-duration: 24s; animation-delay: -9s; }
+.sq-5 { width: 28px; height: 28px; top: 82%; left: 35%; animation-duration: 18s; animation-delay: -4s; }
+.sq-6 { width: 50px; height: 50px; top: 42%; left: 48%; animation-duration: 20s; animation-delay: -7s; }
+.sq-7 { width: 36px; height: 36px; top: 8%; right: 28%; animation-duration: 17s; animation-delay: -2s; }
+.sq-8 { width: 64px; height: 64px; top: 88%; right: 8%; animation-duration: 23s; animation-delay: -11s; }
+
+@keyframes floatSquare {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(0.95);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translate3d(24px, -36px, 0) rotate(18deg) scale(1.08);
+    opacity: 0.75;
+    border-color: rgba(192, 132, 252, 0.5);
+  }
+  100% {
+    transform: translate3d(-18px, -65px, 0) rotate(35deg) scale(0.98);
+    opacity: 0.4;
+  }
 }
 
 /* Layer 3: Twinkling Particle Grid Overlay */
