@@ -1,215 +1,584 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hanania's Portfolio</title>
+  <title>Hanania Meseret | DevOps Engineer • Mobile & Web App Developer</title>
+  
+  <!-- Primary Meta Tags & SEO -->
+  <meta name="title" content="Hanania Meseret | DevOps Engineer • Mobile & Web App Developer">
+  <meta name="description" content="Portfolio of Hanania Meseret - Engineer specializing in DevOps automation (CI/CD, Docker, Kubernetes, AWS), mobile app development (Flutter, React Native), and full-stack web solutions.">
+  <meta name="keywords" content="Hanania Meseret, DevOps Engineer, Mobile Developer, Flutter, React Native, Kubernetes, Docker, CI/CD, Full Stack, Software Engineer, Addis Ababa, Ethiopia">
+  <meta name="author" content="Hanania Meseret">
+  <link rel="canonical" href="https://hanania16.github.io/">
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Preahvihear&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hanania16.github.io/">
+  <meta property="og:title" content="Hanania Meseret | DevOps Engineer • Mobile & Web App Developer">
+  <meta property="og:description" content="DevOps automation, high-performance mobile apps, and scalable web solutions. Explore my projects, technical skills, and engineering workflow.">
+  <meta property="og:image" content="assets/images/profile.png">
+
+  <!-- Twitter Card -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://hanania16.github.io/">
+  <meta property="twitter:title" content="Hanania Meseret | DevOps • Mobile • Web Developer">
+  <meta property="twitter:description" content="Specializing in CI/CD, Kubernetes, Flutter, React Native, and full-stack web engineering.">
+  <meta property="twitter:image" content="assets/images/profile.png">
+
+  <!-- Favicon / Color -->
+  <meta name="theme-color" content="#16002e">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Preahvihear&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<style>
-
-</style>
 <body>
 
+  <!-- Top Scroll Progress Bar -->
+  <div class="scroll-progress-bar" id="scroll-progress"></div>
+
+  <!-- Ambient Dynamic Background Canvas Layers (Orbs, Hex Grid, Particles, Cursor Glow) -->
+  <div class="ambient-bg-container" aria-hidden="true">
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+    <div class="ambient-pattern-layer"></div>
+    <div class="ambient-particles-layer"></div>
+    <div class="cursor-glow" id="cursorGlow"></div>
+  </div>
+
   <!-- NAVBAR -->
-  <header class="navbar">
-    <div class="logo">HM</div>
+  <header class="navbar" role="banner">
+    <a href="#home" class="logo-wrap" aria-label="Hanania Meseret Portfolio Home">
+      <div class="logo">HM</div>
+    </a>
 
-  <ul class="nav-links" id="nav-links">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
+    <div class="nav-right">
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#roadmap">Roadmap</a></li>
+          <li><a href="#terminal">Console</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#values">Why Me</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
 
-      <!-- Hamburger button - MOVED OUTSIDE nav tag -->
-      <div class="hamburger" id="hamburger">
+      <!-- Dark / Light Theme Toggle Button -->
+      <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle dark/light theme">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      </button>
+
+      <!-- Hamburger button -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
-      </div>
+      </button>
+    </div>
   </header>
 
-  <!-- Add this after the header or before closing body tag -->
-<div class="nav-overlay" id="navOverlay"></div>
+  <!-- Navigation Backdrop Overlay -->
+  <div class="nav-overlay" id="navOverlay"></div>
 
-  <!-- HERO -->
-  <section class="hero">
+  <main>
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <!-- Profile Image -->
+        <div class="hero-img">
+          <img src="assets/images/profile.png" alt="Hanania Meseret - DevOps & AI Engineer, Software Engineering Student" loading="eager" width="350" height="350">
+        </div>
 
-    <div class="hero-content">
+        <!-- Hero Text -->
+        <div class="hero-text">
+          <div class="hero-badges-strip">
+            <span class="hero-tag tag-devops">● DevOps</span>
+            <span class="hero-tag tag-ai">● AI Engineering</span>
+            <span class="hero-tag tag-student">● 3rd-Year SE Student</span>
+          </div>
 
-      <!-- IMAGE -->
-      <div class="hero-img">
-        <img src="ChatGPT Image Mar 27, 2026, 07_39_15 PM.png" alt="profile">
+          <!-- Currently Exploring Badge (Editable TODO) -->
+          <div class="hero-learning-badge">
+            <span class="pulse-dot"></span>
+            <!-- TODO: Update what you are currently exploring -->
+            <span class="learning-text">Currently exploring: <strong>RAG & Kubernetes</strong></span>
+          </div>
+
+          <h3>Hello! I am <span>Hanania Meseret</span></h3>
+          <p class="small-title">Software Engineering Student & Aspiring Builder</p>
+          <h1>
+            Automating systems <br>
+            and building with <span class="highlight">intelligent LLMs</span>.
+          </h1>
+          <p class="sub-text">
+            Focused on robust cloud delivery, automated CI/CD infrastructure, and building LLM applications powered by Claude, tool use, and retrieval systems.
+          </p>
+        </div>
       </div>
 
-      <!-- TEXT -->
-      <div class="hero-text">
-        <h3>Hello! I am <span>Hanania Meseret</span></h3>
-
-        <p class="small-title">A Developer who</p>
-
-        <h1>
-          Judges a book <br>
-          by its <span class="highlight">cover</span>...
-        </h1>
-
-        <p class="sub-text">
-          Because if the cover doesn’t impress you, what else will?
+      <!-- Bottom Dynamic Typing Text -->
+      <div class="bottom-text">
+        <div class="typing-wrap">
+          <span class="typing-prefix">I am an aspiring</span>
+          <div class="typing" aria-live="polite"></div>
+        </div>
+        <p class="description">
+          3rd-year Software Engineering student dedicated to deep-diving into DevOps automation (Docker, Linux, CI/CD, AWS) and AI application development (prompt engineering, Claude API, RAG, agent workflows). Web and mobile development serve as supporting execution layers for end-to-end prototypes.
         </p>
       </div>
 
-    </div>
-
-    <!-- BOTTOM TEXT -->
-  <div class="bottom-text">
-    <p class="typing"></p>
-
-    <p class="description">
-      A self-taught UI/UX designer, functioning in the industry for 3+ years now.
-      I make meaningful and delightful digital products that create an equilibrium
-      between user needs and business goals.
-    </p>
-</div>
-
-  </section>
-
-<!-- BUTTONS -->
-<div class="buttons">
-  <button class="btn-view-projects">View Projects</button>
-  <button class="btn-contact-me">Contact Me</button>
-</div>
-
-
-<!-- SKILLS SECTION -->
-<section id="skills" class="skills-section reveal">
-  <div class="container">
-    <h2 class="section-title">My <span>Skills</span></h2>
-    <p class="section-subtitle">Technologies & tools I work with</p>
-    
-    <!-- Skill Category Tabs -->
-    <div class="skill-tabs">
-     <button class="tab-btn active" data-category="technical">Technical Skills</button>
-     <button class="tab-btn" data-category="design">Design Tools</button>
-     <button class="tab-btn" data-category="soft">Soft Skills</button>
-    </div>
-    
-    <!-- Skills Container -->
-    <div id="skills-container"></div>
-  </div>
-</section>
-
-<!-- WORK EXPERIENCE SECTION -->
-<section id="experience" class="experience-section reveal">
-  <div class="container">
-    <h2 class="section-title">Work <span>Experience</span></h2>
-    <div class="experience-list" id="experience-list"></div>
-  </div>
-</section>
-
-<!-- CTA SECTION -->
-<section class="cta-section reveal">
-  <div class="container">
-    <p class="cta-text" id="cta-text">I'm currently looking to join a cross-functional team that values improving people's lives through accessible design</p>
-  </div>
-</section>
-
-
-
-<!-- ALL PROJECTS SECTION -->
-<section class="projects-section reveal">
-  <div class="container">
-    <h2 class="section-title">All <span>Projects</span></h2>
-    <div class="projects-grid" id="projects-grid"></div>
-  </div>
-</section>
-
-<!-- CONTACT SECTION -->
-<section id="contact" class="contact-section reveal">
-  <div class="container">
-    <h2 class="section-title">Get In <span>Touch</span></h2>
-    <p class="section-subtitle">I'd love to hear from you!</p>
-    <div class="contact-content">
-      <div class="contact-info">
-        <div class="contact-item">
-            <span class="contact-icon">Mail</span>
-            <div>
-              <h4>Email</h4>
-              <p>hanania@example.com</p>
-            </div>
-          </div>
-          <div class="contact-item">
-            <span class="contact-icon">Pin</span>
-            <div>
-              <h4>Location</h4>
-              <p>Ethiopia, Addis Ababa</p>
-            </div>
-          </div>
-          <div class="contact-item">
-            <span class="contact-icon">Briefcase</span>
-            <div>
-              <h4>Work</h4>
-              <p>Open for opportunities</p>
-            </div>
-          </div>
-          <div class="contact-social">
-            <a href="mailto:hanania@example.com" class="social-icon" title="Email">Mail</a>
-            <a href="https://github.com/hanania16" class="social-icon" title="GitHub">Code</a>
-            <a href="https://linkedin.com/in/hanania" class="social-icon" title="LinkedIn">Link</a>
-            <a href="https://twitter.com/hanania_dev" class="social-icon" title="Twitter">Tweet</a>
-          </div>
+      <!-- CTA Buttons -->
+      <div class="buttons">
+        <button class="btn-view-projects">
+          <span>Explore Projects</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <button class="btn-contact-me">
+          <span>Let's Connect</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+        </button>
       </div>
-      <form class="contact-form" id="contact-form">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <input type="text" name="subject" placeholder="Subject">
-        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit" class="btn-submit">Send Message</button>
-      </form>
-    </div>
-  </div>
-</section>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="footer-content">
-    <div class="footer-brand">
-      <h3 class="footer-logo">HM</h3>
-      <p>Creating meaningful digital experiences that blend design and functionality.</p>
-    </div>
-    <div class="footer-links-section">
-      <h4>Quick Links</h4>
-      <ul class="footer-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-social-section">
-      <h4>Connect</h4>
-       <div class="social-icons">
-         <a href="mailto:hanania@example.com" class="social-icon" title="Email">Mail</a>
-         <a href="https://github.com/hanania16" class="social-icon" title="GitHub">Code</a>
-         <a href="https://linkedin.com/in/hanania" class="social-icon" title="LinkedIn">Link</a>
-         <a href="https://twitter.com/hanania_dev" class="social-icon" title="Twitter">Tweet</a>
-         <a href="https://instagram.com/hanania" class="social-icon" title="Instagram">Photo</a>
-       </div>
-    </div>
-  </div>
-   <div class="footer-bottom">
-     <p>© 2026 Hanania Meseret. Crafted with <span class="heart">love</span> using HTML, CSS & JavaScript</p>
-   </div>
-</footer>
+      <!-- Section Wave Divider -->
+      <div class="section-divider-wave wave-hero" aria-hidden="true">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M0,0 C150,90 350,-40 500,45 C650,130 900,10 1200,60 L1200,120 L0,120 Z"></path>
+        </svg>
+      </div>
+    </section>
 
-<!-- Back to Top Button -->
-<button class="back-to-top" id="backToTop">↑</button>
+    <!-- STATS COUNTER BAR (TODO: Unverified metrics subject to user audit) -->
+    <section class="stats-bar" aria-label="Key Performance Indicators">
+      <div class="container">
+        <!-- Note: Unverified estimates; adjust in assets/js/script.js -->
+        <div class="stats-grid" id="stats-grid"></div>
+      </div>
+    </section>
 
-  <script src="script.js"></script>
+    <!-- ABOUT & CORE FOCUS SECTION -->
+    <section id="about" class="about-section reveal">
+      <div class="container">
+        <h2 class="section-title">Career <span>Direction</span></h2>
+        <p class="section-subtitle">Bridging automated cloud infrastructure and next-generation LLM applications</p>
+        
+        <div class="about-grid">
+          <div class="about-card highlight-card">
+            <div class="about-card-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+            </div>
+            <span class="about-badge">Primary Focus #1</span>
+            <h3>DevOps & Cloud Engineering</h3>
+            <p>
+              Automating containerized workloads and reproducible environments. Building hands-on competence with Linux, Docker, Docker Compose, GitHub Actions CI/CD pipelines, and core AWS services.
+            </p>
+            <ul class="about-list">
+              <li>Continuous integration & automated test pipelines</li>
+              <li>Containerized deployment & reproducible Docker environments</li>
+              <li>Infrastructure basics with Terraform & Kubernetes concepts</li>
+            </ul>
+          </div>
+
+          <div class="about-card highlight-card">
+            <div class="about-card-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 0 1 10 10c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm0 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-4 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>
+            </div>
+            <span class="about-badge">Primary Focus #2</span>
+            <h3>AI & LLM Engineering</h3>
+            <p>
+              Engineering applications on top of cutting-edge Large Language Models (specializing in Anthropic's Claude API). Designing robust prompt flows, structured tool use, and Retrieval-Augmented Generation (RAG).
+            </p>
+            <ul class="about-list">
+              <li>Claude / Anthropic API (Messages, streaming, tool use)</li>
+              <li>RAG architectures (embeddings, chunking, vector stores)</li>
+              <li>AI agents, Model Context Protocol (MCP), and evaluation</li>
+            </ul>
+          </div>
+
+          <div class="about-card supporting-card">
+            <div class="about-card-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            </div>
+            <span class="about-badge">Supporting Foundation</span>
+            <h3>Web & Mobile Delivery</h3>
+            <p>
+              Using React, Next.js, and cross-platform mobile frameworks as the interactive client layers for deploying and demonstrating AI products and automated microservices.
+            </p>
+            <ul class="about-list">
+              <li>Interactive web front-ends with clean UI/UX</li>
+              <li>REST APIs, Node.js, and PostgreSQL integration</li>
+              <li>Cross-platform prototyping (Flutter & React Native)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section Wave Divider -->
+      <div class="section-divider-wave wave-services" aria-hidden="true">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M0,60 C300,120 450,10 750,70 C1000,130 1100,20 1200,50 L1200,120 L0,120 Z"></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- DEVOPS INTERACTIVE TERMINAL VISUALIZER -->
+    <section id="terminal" class="terminal-section reveal">
+      <div class="container">
+        <h2 class="section-title">DevOps <span>Console</span></h2>
+        <p class="section-subtitle">Interactive cloud orchestration simulator (try typing 'deploy', 'status', or 'docker ps')</p>
+        
+        <div class="terminal-interactive-box">
+          <div class="terminal-header-bar">
+            <div class="term-controls">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <span class="term-title">devops@hanania:~ (bash)</span>
+            <span class="term-badge">● Systems Active</span>
+          </div>
+
+          <div class="terminal-logs-window" id="terminal-logs">
+            <div class="terminal-entry"><span class="term-prompt">devops@hanania:~$</span> sys-check --cluster=prod</div>
+            <div class="terminal-reply">
+              ✔ Cloud Infrastructure: Containerized & Monitored<br>
+              ✔ CI/CD Engine: Automated Pipeline Ready<br>
+              ✔ Docker Engine: Healthy & Responsive<br>
+              ✔ Monitoring: Prometheus + Grafana Telemetry Active
+            </div>
+            <div class="terminal-entry"><span class="term-prompt">devops@hanania:~$</span> echo "Type 'help', 'status', 'deploy', 'docker ps', or 'k8s' below"</div>
+          </div>
+
+          <div class="terminal-input-bar">
+            <span class="term-prompt">devops@hanania:~$</span>
+            <input type="text" id="terminal-input" class="terminal-input-field" placeholder="Type a command and press Enter..." autocomplete="off" spellcheck="false" aria-label="Terminal command input">
+            <span class="term-hint">Press Enter ↵</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section Wave Divider -->
+      <div class="section-divider-wave wave-terminal" aria-hidden="true">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M0,30 C200,100 450,0 700,60 C950,120 1100,40 1200,80 L1200,120 L0,120 Z"></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION (Categorized into 5 stacks with honest level chips) -->
+    <section id="skills" class="skills-section reveal">
+      <div class="container">
+        <h2 class="section-title">Technical <span>Proficiencies</span></h2>
+        <p class="section-subtitle">Categorized competencies with honest, self-assessed levels (Learning, Familiar, or Proficient)</p>
+        
+        <!-- Skill Category Tabs -->
+        <div class="skill-tabs" role="tablist">
+          <button class="tab-btn active" data-category="core" role="tab" aria-selected="true">1. Core Foundation</button>
+          <button class="tab-btn" data-category="devops" role="tab" aria-selected="false">2. DevOps & Cloud</button>
+          <button class="tab-btn" data-category="ai" role="tab" aria-selected="false">3. AI & LLM</button>
+          <button class="tab-btn" data-category="mlops" role="tab" aria-selected="false">4. MLOps / AI Infra</button>
+          <button class="tab-btn" data-category="web" role="tab" aria-selected="false">5. Web & Mobile</button>
+        </div>
+        
+        <!-- Skills Container -->
+        <div id="skills-container"></div>
+      </div>
+
+      <!-- Section Wave Divider -->
+      <div class="section-divider-wave wave-skills" aria-hidden="true">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M0,70 C250,10 500,110 800,40 C1050,-10 1150,70 1200,50 L1200,120 L0,120 Z"></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- LEARNING ROADMAP SECTION -->
+    <section id="roadmap" class="roadmap-section reveal">
+      <div class="container">
+        <h2 class="section-title">Learning <span>Roadmap</span></h2>
+        <p class="section-subtitle">Structured progression tracking my DevOps and AI engineering technical milestones</p>
+        
+        <div class="roadmap-timeline" id="roadmap-timeline"></div>
+      </div>
+
+      <!-- Section Wave Divider -->
+      <div class="section-divider-wave wave-process" aria-hidden="true">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M0,50 C300,0 550,100 850,30 C1050,-20 1150,80 1200,60 L1200,120 L0,120 Z"></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- PROCESS / WORKFLOW SECTION -->
+    <section id="process" class="process-section reveal">
+      <div class="container">
+        <h2 class="section-title">My <span>Workflow</span></h2>
+        <p class="section-subtitle">How I take requirements through architecture, testing, automated delivery, and monitoring</p>
+        <div class="process-grid" id="process-grid"></div>
+      </div>
+
+      <!-- Section Wave Divider -->
+      <div class="section-divider-wave wave-process" aria-hidden="true">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M0,50 C300,0 550,100 850,30 C1050,-20 1150,80 1200,60 L1200,120 L0,120 Z"></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECTS SECTION -->
+    <section id="projects" class="projects-section reveal">
+      <div class="container">
+        <h2 class="section-title">Featured <span>Projects</span></h2>
+        <p class="section-subtitle">Realized software work alongside clearly badged "Planned / In Progress" flagship projects</p>
+        
+        <!-- Filter Tabs -->
+        <div class="projects-filter-bar">
+          <button class="project-filter-btn active" data-filter="all">All Projects</button>
+          <button class="project-filter-btn" data-filter="devops">DevOps</button>
+          <button class="project-filter-btn" data-filter="ai">AI & LLM</button>
+          <button class="project-filter-btn" data-filter="web">Web & Mobile</button>
+        </div>
+
+        <div class="projects-grid" id="projects-grid"></div>
+      </div>
+
+      <!-- Section Wave Divider -->
+      <div class="section-divider-wave wave-projects" aria-hidden="true">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M0,40 C200,110 450,10 750,80 C1000,140 1120,30 1200,60 L1200,120 L0,120 Z"></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS & COURSES SECTION (TODO Placeholders) -->
+    <section id="certifications" class="certifications-section reveal">
+      <div class="container">
+        <h2 class="section-title">Certifications <span>& Courses</span></h2>
+        <p class="section-subtitle">Formal milestones and structured industry curriculum pursued as a 3rd-year engineering student</p>
+        
+        <div class="certifications-grid" id="certifications-grid"></div>
+      </div>
+
+      <!-- Section Wave Divider -->
+      <div class="section-divider-wave wave-services" aria-hidden="true">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M0,60 C300,120 450,10 750,70 C1000,130 1100,20 1200,50 L1200,120 L0,120 Z"></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- GITHUB ACTIVITY & PROFILE BLOCK -->
+    <section class="github-activity-section reveal">
+      <div class="container">
+        <div class="github-card">
+          <div class="github-card-left">
+            <div class="github-icon-large" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            </div>
+            <div>
+              <h3>Code, Repositories & Open Source</h3>
+              <p>Explore my daily commits, learning repositories, container manifests, and experimental AI projects on GitHub.</p>
+            </div>
+          </div>
+          <div class="github-card-right">
+            <a href="https://github.com/hanania16" target="_blank" rel="noopener noreferrer" class="btn-github-profile">
+              <span>View @hanania16 on GitHub</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY WORK WITH ME (Replaced Fake Testimonials with Factual Value Pillars) -->
+    <section id="values" class="values-section reveal">
+      <div class="container">
+        <h2 class="section-title">Why Work <span>With Me</span></h2>
+        <p class="section-subtitle">Core principles guiding how I build software and collaborate with teams</p>
+        <div class="values-grid" id="why-work-with-me-grid"></div>
+      </div>
+    </section>
+
+    <!-- WORK EXPERIENCE SECTION -->
+    <section id="experience" class="experience-section reveal">
+      <div class="container">
+        <h2 class="section-title">Work <span>Experience</span></h2>
+        <p class="section-subtitle">My professional journey in design, software engineering, and digital systems</p>
+        <div class="experience-list" id="experience-list"></div>
+      </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section reveal">
+      <div class="container">
+        <p class="cta-text" id="cta-text">
+          Looking for a passionate <span>DevOps</span> and <span>AI Engineering student</span> eager to automate your deployments and build cutting-edge <span>LLM solutions</span>? Let’s connect.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION (Wired to Formspree with Placeholder Form ID) -->
+    <section id="contact" class="contact-section reveal">
+      <div class="container">
+        <h2 class="section-title">Get In <span>Touch</span></h2>
+        <p class="section-subtitle">Let's discuss infrastructure automation, mobile apps, or your next web product.</p>
+        
+        <div class="contact-content">
+          <!-- Contact Info Cards -->
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon" aria-hidden="true">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <div>
+                <h4>Direct Email</h4>
+                <p><a href="mailto:hananiyameseret@gmail.com">hananiyameseret@gmail.com</a></p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon" aria-hidden="true">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+              </div>
+              <div>
+                <h4>Location</h4>
+                <p>Addis Ababa, Ethiopia (Available for Global Remote)</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon" aria-hidden="true">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <div>
+                <h4>Availability</h4>
+                <p>DevOps • Mobile App • Full-Stack Contracts & Full-Time</p>
+              </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="contact-social">
+              <a href="https://github.com/hanania16" class="social-icon" title="GitHub" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                </svg>
+              </a>
+              <a href="https://linkedin.com/in/hanania" class="social-icon" title="LinkedIn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.65 1.65 0 1 0 0-3.3 1.66 1.66 0 0 0 0 3.3m1.39 9.74v-8.37H5.07v8.37h2.78z"/>
+                </svg>
+              </a>
+              <a href="mailto:hananiyameseret@gmail.com" class="social-icon" title="Direct Email" aria-label="Send Email">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Contact Form (Wired to Formspree endpoint) -->
+          <!-- TODO: Replace YOUR_FORMSPREE_ID with your actual Formspree endpoint key (e.g., https://formspree.io/f/mqkvnxyz) -->
+          <form class="contact-form" id="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+            <div id="form-feedback" class="form-feedback"></div>
+            <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name">
+            <input type="email" name="email" placeholder="Your Email Address" required aria-label="Your Email Address">
+            <input type="text" name="subject" placeholder="Subject (e.g. DevOps / Mobile App Project)" aria-label="Subject">
+            <textarea name="message" rows="5" placeholder="Project details, technical requirements, or timeline..." required aria-label="Your Message"></textarea>
+            <button type="submit" class="btn-submit">
+              <span>Send Message</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Section Wave Divider -->
+      <div class="section-divider-wave wave-contact" aria-hidden="true">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M0,50 C250,110 500,20 800,80 C1050,140 1150,40 1200,70 L1200,120 L0,120 Z"></path>
+        </svg>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3 class="footer-logo">HM</h3>
+        <p>Architecting resilient cloud pipelines, high-performance mobile apps, and scalable web platforms with clean code and modern design.</p>
+      </div>
+
+      <div class="footer-links-section">
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#roadmap">Roadmap</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social-section">
+        <h4>Connect</h4>
+        <div class="social-icons">
+          <a href="https://github.com/hanania16" class="social-icon" title="GitHub" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+            </svg>
+          </a>
+          <a href="https://linkedin.com/in/hanania" class="social-icon" title="LinkedIn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.65 1.65 0 1 0 0-3.3 1.66 1.66 0 0 0 0 3.3m1.39 9.74v-8.37H5.07v8.37h2.78z"/>
+            </svg>
+          </a>
+          <a href="mailto:hananiyameseret@gmail.com" class="social-icon" title="Email" aria-label="Email">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Hanania Meseret. Engineered with clean semantic HTML5, Modern CSS & ES6+. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <!-- Main JavaScript -->
+  <script src="assets/js/script.js" defer></script>
 </body>
 </html>
